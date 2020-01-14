@@ -15,7 +15,7 @@ class CreateBukusTable extends Migration
     {
         Schema::create('bukus', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('judul')->unique();
+            $table->string('judul')->default();
             $table->integer('jumlah_halaman')->default(50);
             $table->string('penerbit')->nullable();
             $table->text('synopsis')->nullable();

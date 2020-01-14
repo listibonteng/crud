@@ -75,3 +75,17 @@ Route::get('/', function () {
     return Buku::all();
 });
 
+Route::get('contoh', 'BukuController@latihan');
+Route::get('propil', 'BukuController@latihan2');
+Route::get('dede', 'BukuController@latihan3');
+Route::get('show', 'BukuController@latihan4');
+Route::get('bijil', 'BukuController@soal1');
+Route::get('nama', 'BukuController@soal2');
+Route::get('menu/{naonwe?}','BukuController@soal3');
+Route::get('mkn/{menu?}/{minum?}','BukuController@soal4');
+Route::get('makan/{tuang?}/{eet?}/{harga?}','BukuController@soal5');
+Route::get('get-buku','BukuController@index');
+Route::get('buku','BukuController@buat');
+Route::get('delete-buku/{id}','BukuController@delete');
+Route::get('update-buku/{id}','BukuController@update');
+
