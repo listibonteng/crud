@@ -105,17 +105,17 @@ class BukuController extends Controller
 
     public function index(){
         $buku = Buku::all();
-        return $buku;
+        return view('buku.index',compact('buku'));
     }
     public function show($id){
         $buku = Buku::find($id);
-        return $buku;
+        return view('buku.show',compact('buku'));
     }
 
     public function buat(){
         $buku = new Buku();
         $buku->judul = "HAHAHAHAHA";
-        $buku->jumlah_halaman = 100;
+        $buku->jumlah_halaman = 50;
         $buku->penerbit = 'sinar jaya';
         $buku->synopsis = 'panjang';
         $buku->status = 1;
@@ -123,9 +123,9 @@ class BukuController extends Controller
         return $buku;
     }
 
-    public function update($id){
+    public function update($id,$judul){
         $buku = Buku::find($id);
-        $buku->judul = "buku update";
+        $buku->judul = $judul;
         $buku->jumlah_halaman = 100;
         $buku->penerbit = 'sinar jaya';
         $buku->synopsis = 'panjang';
@@ -137,6 +137,11 @@ class BukuController extends Controller
     public function delete($id){
         $buku = Buku::find($id);
         $buku->delete();
+        return $buku;
+    }
+
+    public function hitungbuku(){
+        $buku = Buku::count();
         return $buku;
     }
 }
